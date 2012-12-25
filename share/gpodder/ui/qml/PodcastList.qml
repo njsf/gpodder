@@ -60,13 +60,19 @@ Item {
 
         section.property: 'section'
         section.delegate: Column {
-	    spacing: 2
-            Label {
+            spacing: Config.smallSpacing 
+            anchors.topMargin: Config.largeSpacing
+
+            Text {
                 font.pixelSize: Config.headerHeight * .5
                 wrapMode: Text.NoWrap
                 text: section
                 style: Text.Raised
                 color: "#bbb"
+                anchors {
+                    left: parent.left
+                    leftMargin: Config.smallSpacing
+                }
             }
             Rectangle {
               height: 1
