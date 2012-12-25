@@ -185,26 +185,36 @@ Item {
             left: parent.left
             right: parent.right
         }
-        Grid {
-          columns: Util.isScreenPortrait() ? 1 : 2
-          spacing: 2
-          anchors.horizontalCenter: parent.horizontalCenter
-          Button {
-            id: showNotesButton
-            text: _('Shownotes')
-            onClicked: { 
-                nowPlayingThrobber.opened = false
-                main.openShowNotes(episode)
-            }
-          }
 
-          Button {
-            visible: playQueue.length > 0
-            id: playQueueButton
-            text: _('Play queue') + ' (' + playQueue.length + ')'
-            onClicked: playQueueDialog.showQueue();
-          }
+        Grid {
+            columns: Util.isScreenPortrait() ? 1 : 2
+
+            spacing: 2
+
+            anchors.horizontalCenter: parent.horizontalCenter
+
+            Button {
+                id: showNotesButton
+                width: parent.width * .9
+
+                text: _('Shownotes')
+                onClicked: {
+                    nowPlayingThrobber.opened = false
+                    main.openShowNotes(episode)
+                }
+            }
+
+            Button {
+                id: playQueueButton
+                width: parent.width * .9
+
+                visible: playQueue.length > 0
+
+                text: _('Play queue') + ' (' + playQueue.length + ')'
+                onClicked: playQueueDialog.showQueue();
+            }
         }
+
         MultiSelectionDialog {
             id: playQueueDialog
 
