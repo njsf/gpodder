@@ -9,17 +9,6 @@ import 'util.js' as Util
 SelectableItem {
     id: podcastItem
 
-    BusyIndicator {
-        id: spinner
-        anchors {
-            verticalCenter: parent.verticalCenter
-            right: cover.left
-            rightMargin: Config.smallSpacing
-        }
-        visible: modelData.qupdating
-        running: visible
-    }
-
     Image {
         id: cover
 
@@ -34,6 +23,7 @@ SelectableItem {
             verticalCenter: parent.verticalCenter
             left: parent.left
             leftMargin: Config.smallSpacing
+            rightMargin: Config.smallSpacing
         }
     }
 
@@ -65,6 +55,7 @@ SelectableItem {
             right: parent.right
             top: parent.top
             bottom: parent.bottom
+            rightMargin: Config.smallSpacing
         }
 
         Label {
@@ -87,5 +78,17 @@ SelectableItem {
         }
     }
 
+    BusyIndicator {
+        id: spinner
+        anchors {
+            right: parent.right
+            top: parent.top
+            bottom: parent.bottom
+            rightMargin: Config.smallSpacing
+            verticalCenter: parent.verticalCenter
+        }
+        visible: modelData.qupdating
+        running: visible
+    }
 }
 
