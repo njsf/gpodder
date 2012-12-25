@@ -9,21 +9,27 @@ import 'util.js' as Util
 SelectableItem {
     id: podcastItem
 
-    Image {
-        id: cover
+    Rectangle {
 
-        source: modelData.qcoverart
-        asynchronous: true
+        id: cover
+        color: 'white'
         width: podcastItem.height * .8
         height: width
-        sourceSize.width: width
-        sourceSize.height: height
 
         anchors {
             verticalCenter: parent.verticalCenter
             left: parent.left
             leftMargin: Config.smallSpacing
             rightMargin: Config.smallSpacing
+        }
+
+        Image {
+            source: modelData.qcoverart
+            asynchronous: true
+            width: podcastItem.height * .8
+            height: width
+            sourceSize.width: width
+            sourceSize.height: height
         }
     }
 
