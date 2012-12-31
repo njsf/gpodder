@@ -9,7 +9,7 @@ import 'util.js' as Util
 Item {
     id: mediaPlayer
 
-    height: (Config.largeSpacing * 4) + (150 * Config.scale) + 110
+    height: (Config.largeSpacing * 4) + (150 * Config.scale) + 110 
 
     property variant episode: undefined
     property real position: audioPlayer.position/1000
@@ -179,7 +179,7 @@ Item {
 
     Rectangle {
         id: mediaPlayerButtons
-        color: 'black'
+
         anchors {
             top: mediaPlayerMain.bottom
             left: parent.left
@@ -195,7 +195,6 @@ Item {
 
             Button {
                 id: showNotesButton
-                width: parent.width * .9
 
                 text: _('Shownotes')
                 onClicked: {
@@ -206,7 +205,6 @@ Item {
 
             Button {
                 id: playQueueButton
-                width: parent.width * .9
 
                 visible: playQueue.length > 0
 
