@@ -88,10 +88,7 @@ SelectableItem {
         id: spinner
         anchors {
             right: parent.right
-            top: parent.top
-            bottom: parent.bottom
             rightMargin: Config.smallSpacing
-            verticalCenter: parent.verticalCenter
         }
         visible: modelData.qupdating
         running: visible
